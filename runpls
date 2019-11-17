@@ -1,0 +1,3 @@
+cd blockchain-demo
+npm install
+npm start
