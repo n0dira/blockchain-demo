@@ -1,5 +1,5 @@
 var difficulty = 8;        // number of zeros required at front of hash
-var maximumNonce = 394967296; // limit the nonce to this so we don't mine too long
+var maximumNonce = 1394967296; // limit the nonce to this so we don't mine too long
 
 // NOTE: Because there are 16 possible characters in a hex value, each time you increment
 // the difficulty by one you make the puzzle 16 times harder. In my testing, a difficulty
@@ -48,7 +48,7 @@ function updateChain(block, chain) {
 }
 
 function mine(block, chain, isChain) {
-  for (var x = 72801200; x <= maximumNonce; x++) {
+  for (var x = 394967296; x <= maximumNonce; x++) {
     $('#block'+block+'chain'+chain+'nonce').val(x);
     $('#block'+block+'chain'+chain+'hash').val(sha256(block, chain));
     if ($('#block'+block+'chain'+chain+'hash').val().substr(0, difficulty) === pattern) {
